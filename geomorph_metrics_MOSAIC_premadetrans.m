@@ -10,7 +10,7 @@ savefile = 'y';
 % --- Change this to skip transects - meters
 % pSkip = 10;
 % --- Minimum crest height ---%
-minelev = 2.0;
+minelev = 3.0;
 
 % ---- Input Smoothing Parameter ---- %
 S = 10;
@@ -26,7 +26,7 @@ P = 0.2;
 % --- indir: Source of Grids --- %
 indir = 'F:\DUNEX\AirborneLidar\';
 outdir = 'F:\DUNEX\Features_Output\';
-SLbase = 'NC_postSandy_USGS_2012_2_';
+SLbase = 'NC_PostMatt_2016_3_';
 addpath(genpath(indir))
 addpath(genpath(outdir))
 
@@ -42,7 +42,7 @@ Ntrans = length(trans);
 addpath(genpath('F:\DUNEX\VolChangeAssessments\'))
 
 %--GRIDS--%
-GRIDSpath = ([indir '2012_PostSandy_USGS_NC_BareEarth_1mGrid\postMatthew_2012_1kmBlocks\']);
+GRIDSpath = ([indir '2016_PostMatthew_NC_BareEarth_1mGrid\postMatthew_2016_1kmBlocks\']);
 GRIDSstruct = dir([GRIDSpath '*.TIF']);
 GRIDS = {GRIDSstruct(:).name}'; % making cell array of file names
 
@@ -60,7 +60,9 @@ Transects = [];
 % for jj = 2
    
    tiff = char(GRIDS(jj));
-   blocknum = tiff(23:24); % CHANGE for different file names
+%    blocknum = tiff(23:24); % CHANGE for different file names
+   blocknum = tiff(end-5:end-4);
+
 %    blocknum = jj;
    blocknum
    
