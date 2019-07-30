@@ -1,7 +1,15 @@
+%%%% Dune Crest, Toe, and Highest Dune Peak Extraction %%%%
+% INPUTS:  Raster TIFs (one or more)
+%          Transect lines (Shapefile)
+% PARAMETER VARIABLES:
+%          minelev (minimum elevation of dune crest)
+%          S (smoothing parameter)
+%          P (minimum crest prominence - crest ht. relative to adjacent troughs)
 % ---- From Lauren Dunkin 02/2017
 % ---- edited by Eve Eisemann 03/2017
 % ---- edited by Michael Hartman 04/2017
-% ---- edited by Eve Eisemann 04/2017, 05/2017
+% ---- edited by Eve Eisemann 04/2017, 05/2017, 2018, 7/2019
+% ------------------------------------------------------------------ %
 clear,clc
 
 % ---- Save a file? y/n ----%
